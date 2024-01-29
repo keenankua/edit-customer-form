@@ -1,0 +1,139 @@
+@import "./_variables";
+
+.edit-customer-page {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .content {
+    width: 100%;
+    max-width: $max-content-width;
+    padding: 2rem;
+
+    @media (min-width: 751px) {
+      padding: 6rem;
+    }
+
+    .edit-customer-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .error-loading-message {
+      color: red;
+      margin: 1rem 0;
+
+      @media (min-width: 751px) {
+        font-size: 1.2rem;
+        padding: 6rem;
+      }
+    }
+
+    .customer-select-field {
+      background: $wave-accent-blue;
+      padding: 0.8rem 1.5rem 1.5rem;
+      border-radius: 1rem;
+
+      @media (min-width: 751px) {
+        padding: 1rem 2rem 2rem;
+      }
+
+      .customer-select-label {
+        color: #fff;
+        margin-bottom: 0.2rem;
+
+        @media (min-width: 751px) {
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+
+      .customer-select {
+        width: 100%;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    .edit-customer-form {
+      width: 100%;
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "description description"
+        "name name"
+        "email email"
+        "channel channel"
+        "address address"
+        "city city"
+        "province postal"
+        "submit submit";
+
+      @media (min-width: 751px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+          "description description description description"
+          "name name email email"
+          "channel channel . ."
+          "address address address address"
+          "city city province postal"
+          "submit submit . .";
+      }
+
+      @media (min-width: 950px) {
+        grid-template-areas:
+          "description description description description"
+          "name name email email"
+          "channel channel . ."
+          "address address address address"
+          "city city province postal"
+          "submit . . .";
+      }
+
+      .form-description {
+        grid-area: description;
+
+        @media (min-width: 751px) {
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+
+      .name-input {
+        grid-area: name;
+      }
+
+      .email-input {
+        grid-area: email;
+      }
+
+      .channel-input {
+        grid-area: channel;
+      }
+
+      .address-input {
+        grid-area: address;
+      }
+
+      .city-input {
+        grid-area: city;
+      }
+
+      .province-input {
+        grid-area: province;
+      }
+
+      .postal-input {
+        grid-area: postal;
+      }
+
+      .submit-button {
+        grid-area: submit;
+        background-color: $wave-accent-blue;
+      }
+    }
+  }
+}
